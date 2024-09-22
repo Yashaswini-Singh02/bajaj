@@ -18,7 +18,7 @@ const App: React.FC = () => {
       const parsedJson = JSON.parse(jsonInput);
       setErrorMessage(null);
       const response = await axios.post<ApiResponse>(
-        "http://localhost:8080/bfhl",
+        "https://bajaj-production-ea79.up.railway.app/bfhl",
         parsedJson
       );
 
