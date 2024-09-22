@@ -12,7 +12,7 @@ const JsonInput: React.FC<JsonInputProps> = ({
   handleSubmit,
 }) => {
   return (
-    <div>
+    <div className="flex flex-col">
       <textarea
         className="w-96 h-40 p-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         placeholder="Enter valid JSON here"

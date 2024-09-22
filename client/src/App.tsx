@@ -17,7 +17,6 @@ const App: React.FC = () => {
     try {
       const parsedJson = JSON.parse(jsonInput);
       setErrorMessage(null);
-
       const response = await axios.post<ApiResponse>(
         "http://localhost:8080/bfhl",
         parsedJson

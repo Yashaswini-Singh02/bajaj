@@ -4,7 +4,7 @@ import { validateBase64File } from "../utils/functions/validate-b64";
 
 export const handleStringFilter = (req: Request, res: Response) => {
   try {
-    const { data, file_base64 } = req.body;
+    const { data, file_b64 } = req.body;
 
     const userId = `yashaswini_singh_shaktawat_02012003`;
 
@@ -13,7 +13,7 @@ export const handleStringFilter = (req: Request, res: Response) => {
 
     if (Array.isArray(data)) {
       data.forEach((item: any) => {
-        if (typeof item === "number") {
+        if (parseInt(item) || parseInt(item) === 0) {
           numbers.push(item);
         } else if (typeof item === "string" && /^[a-zA-Z]$/.test(item)) {
           alphabets.push(item);
@@ -29,7 +29,7 @@ export const handleStringFilter = (req: Request, res: Response) => {
         ? lowercaseAlphabets.sort().reverse()[0]
         : null;
 
-    const { isValid, mimeType, sizeKB } = validateBase64File(file_base64);
+    const { isValid, mimeType, sizeKB } = validateBase64File(file_b64);
 
     const response: BFHLResponse = {
       is_success: true,
