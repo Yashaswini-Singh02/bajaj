@@ -21,7 +21,7 @@ app.use("*", (req: Request, res: Response) => {
   });
 });
 
-app.use("/health-check", (req: Request, res: Response) => {
+app.get("/health-check", (req: Request, res: Response) => {
   res.status(200).json({
     is_success: true,
     message: "Server is running.",
